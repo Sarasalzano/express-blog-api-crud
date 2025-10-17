@@ -51,6 +51,7 @@ function destroy(req, res) {
     posts.splice(posts.indexOf(post), 1);
     //setto stato corretto
     res.sendStatus(204);
+    console.log(posts);
 }
 
 module.exports = {index, show, store, update, modify, destroy}; 
