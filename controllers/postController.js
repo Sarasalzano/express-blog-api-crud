@@ -8,7 +8,11 @@ function index(req, res) {
 
 //funzione show
 function show(req, res) {
-    res.send("Dettagli del post " + req.params.id);
+    //recupero l'id e lo trasformo da stringa a numero 
+    const id = parseInt(req.params.id);
+    //cerco id post
+    const post = posts.find(post => post.id === id)
+    res.json(post);
 }
 
 //funzione store
