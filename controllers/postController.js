@@ -27,8 +27,8 @@ function modify(req, res) {
 }
 
 //funzione delete 
-function del(req, res) {
+function destroy(req, res) {
     res.send("Eliminazione del post " + req.params.id);
 }
 
-module.exports = {index, show, store, update, modify, del}; 
+module.exports = {index, show, store, update, modify, destroy}; 
