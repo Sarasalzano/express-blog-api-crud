@@ -17,6 +17,16 @@ function show(req, res) {
 
 //funzione store
 function store(req, res) {
+    //creiamo nuovo id 
+    const newId = menu[menu.length -1].id + 1; 
+    //creazione nuovo post
+    const newPost = {
+    id: newId,
+    title: "Torta red velvet",
+    content: "Lorem Ipsum",
+    tags: ["Dolci", "Dolci rossi", "Torte", "Ricette vegetariane", "Ricette al forno"]
+}
+
     //visualizza dati specifici
     console.log(req.body);
     res.send("Creazione nuovo post");
