@@ -36,6 +36,19 @@ res.json(newPost);
 
 //funzione update
 function update(req, res) {
+    //converto id dinamico in numero
+    const id = parseInt(req.params.id)
+    //cerco post tramite id
+    const post = posts.find(post => post.id === id);
+    if (!post) {
+        res.status(404);
+        return res.json({
+            error :"Not Found",
+            message:"Post non trovato"
+        })
+    }
+   
+
     res.send("Modifica post " + req.params.id);   
 }
 
