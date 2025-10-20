@@ -17,7 +17,8 @@ function show(req, res) {
 
 //funzione store
 function store(req, res) {
-    
+    //visualizza dati specifici
+    console.log(req.body);
     res.send("Creazione nuovo post");
 }
 
