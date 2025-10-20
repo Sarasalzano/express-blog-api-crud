@@ -47,9 +47,13 @@ function update(req, res) {
             message:"Post non trovato"
         })
     }
-   
+   //aggiorniamo il post
+   post.title = req.body.title;
+   post.content = req.body.content;
+   post.tags = req.body.tags
 
-    res.send("Modifica post " + req.params.id);   
+   console.log(posts);
+    res.json(post)   
 }
 
 //funzione modify 
