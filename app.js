@@ -7,6 +7,9 @@ const port = 3000;
 // importo il router dei post
 const postsRouter = require('./routers/postsRouter');
 
+//aggiunta body parser
+app.use(express.json())
+
 // middleware per servire file statici
 app.use(express.static("public"));
 
@@ -17,6 +20,7 @@ app.use("/posts", postsRouter);
 app.get("/", (req, res) => {
     res.send("<h1>Server del mio blog</h1>");
 });
+
 
 // avvio il server sulla porta definita
 app.listen(port, () => {
