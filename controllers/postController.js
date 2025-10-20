@@ -18,18 +18,20 @@ function show(req, res) {
 //funzione store
 function store(req, res) {
     //creiamo nuovo id 
-    const newId = menu[menu.length -1].id + 1; 
+    const newId = posts[posts.length -1].id + 1; 
     //creazione nuovo post
     const newPost = {
     id: newId,
-    title: "Torta red velvet",
-    content: "Lorem Ipsum",
-    tags: ["Dolci", "Dolci rossi", "Torte", "Ricette vegetariane", "Ricette al forno"]
+    title: req.body.title,
+    content: req.body.content,
+    tags: req.body.tags
 }
-
-    //visualizza dati specifici
-    console.log(req.body);
-    res.send("Creazione nuovo post");
+//aggiungo post all'array posts
+posts.push(newPost);
+//visualizza dati specifici
+console.log(req.body);
+res.status(201);
+res.json(newPost);
 }
 
 //funzione update
