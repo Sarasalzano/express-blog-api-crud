@@ -7,6 +7,7 @@ const port = 3000;
 // importo il router dei post
 const postsRouter = require('./routers/postsRouter');
 const notFound = require("./middlewares/notFound");
+const errorHandler = require("./middlewares/errorHandler");
 //aggiunta body parser
 app.use(express.json())
 
@@ -22,7 +23,10 @@ app.get("/", (req, res) => {
 });
 
 //aggiungo middleware di gestione rotte non trovate
-app.use(notFound)
+app.use(notFound);
+
+//aggiungo middleware gestione errori
+app.use(errorHandler);
 
 // avvio il server sulla porta definita
 app.listen(port, () => {
