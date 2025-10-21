@@ -6,6 +6,7 @@ const app = express();
 const port = 3000;
 // importo il router dei post
 const postsRouter = require('./routers/postsRouter');
+const notFound = require("./middlewares/notFound");
 //aggiunta body parser
 app.use(express.json())
 
