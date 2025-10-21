@@ -21,6 +21,8 @@ app.get("/", (req, res) => {
     res.send("<h1>Server del mio blog</h1>");
 });
 
+//aggiungo middleware di gestione rotte non trovate
+app.use(notFound)
 
 // avvio il server sulla porta definita
 app.listen(port, () => {
